@@ -60,7 +60,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 
    3.3. Dentro de la sección Usuarios de prueba / Test users:
 
-      - Añade un usuario. Ejemplo: **tuEmail@gmail.com**.
+      - Añade un usuario. Ejemplo: *tuEmail@gmail.com*.
 
       - Pulsa el botón **Guardar y continuar**.
    
