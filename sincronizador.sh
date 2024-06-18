@@ -31,7 +31,7 @@ intranet_login_URL="https://intranet.upv.es/pls/soalu/est_aute.intraalucomp"
 tput civis #Ocultar el cursor
 
 # Banner
-toilet -f big -F border GorrionJS
+toilet -f mono9 -F border GorrionJS
 toilet -f pagga SincCal-UPV
 
 sleep 4
