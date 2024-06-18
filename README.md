@@ -10,13 +10,13 @@
 
 ```
 sudo apt-get update
+sudo apt install curl
+sudo apt-get install python3-pip
 sudo apt install toilet
 ```
 ```
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
-
-
 
 ## Antes de empezar
 1. [Crea un nuevo proyecto](https://console.developers.google.com/projectcreate) en la consola de desarrolladores de Google
