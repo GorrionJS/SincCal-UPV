@@ -5,7 +5,7 @@
 - **SincCal-UPV** es una aplicación desarrollada en **Bash y Python** con el objetivo de sincronizar todas las actividades en las que un usuario de la UPV se inscriba, a su calendario personal de Google Calendar.
 
 
-![Imagen de la portada dónde se ven los logos](/images/portada.png|50x50)
+![Imagen de la portada dónde se ven los logos](/images/portada.png)
 ![Imagen dónde se pueden las actividades reservadas correctamente](/images/actividades_registradas.png)
 ![Imagen dónde se pueden ver las actividades que se quieren registrar pero ya están añadidas](/images/activiades_existentes.png)
 
@@ -99,8 +99,10 @@ chmod +x ./sincronizador.sh
 ```
 
 ## Creación de una tarea cron
+> [!NOTE]
+> Puedes crear una tarea cron para que el ejecutable se ejecute periódicamente sin necesidad de estar ejecutando constantemente la aplicación. 
 
-Puedes crear una tarea cron para que el ejecutable se ejecute periódicamente sin necesidad de estar ejecutando constantemente la aplicación. Para ello ejecuta:
+Para ello ejecuta:
 
 1. Crear o Editar el archivo Crontab
 
@@ -129,7 +131,8 @@ crontab -e
 ```
 
 ## Modificaciones
-Puedes modificar el nombre de las actividades y el color asociado a los eventos. En mi caso, me gusta usar los nombres para las actividades y un color Verde Musgo, que asocio al deporte. Puedes cambiar el color en la sección de Referencias.
+> [!NOTE]
+> Puedes modificar el nombre de las actividades y el color asociado a los eventos. En mi caso, me gusta usar los nombres para las actividades y un color Verde Musgo, que asocio al deporte. Puedes cambiar el color en la sección de Referencias.
 
 
 ## Referencias
