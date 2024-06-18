@@ -1,4 +1,4 @@
-# Sincronizador ActividadesUPV -> Calendar
+# SincCal-UPV
 
 **¿Eres alumno de la UPV y te gusta realizar deporte? ¿Estás cansado de tener que añadir a mano todos los días que vas a hacer deporte?** Pues el SincCal-UPV es la solución para tus problemas.
 
