@@ -1,8 +1,8 @@
-# Sincronizador ActividadesUPV -> Calendar
+# SincCal-UPV
 
 **¿Eres alumno de la UPV y te gusta realizar deporte? ¿Estás cansado de tener que añadir a mano todos los días que vas a hacer deporte?** Pues el SincCal-UPV es la solución para tus problemas.
 
-- **SincCal-UPV** es una aplicación desarrollada en **Bash y Python** con el objetivo de sincronizar todas las actividades a las que un usuario de la UPV se inscriba, a su calendario personal de Google Calendar.
+- **SincCal-UPV** es una aplicación desarrollada en **Bash y Python** con el objetivo de sincronizar todas las actividades en las que un usuario de la UPV se inscriba, a su calendario personal de Google Calendar.
 
 ## Antes de empezar
 
@@ -60,7 +60,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 
    3.3. Dentro de la sección Usuarios de prueba / Test users:
 
-      - Añade un usuario. Ejemplo: **tuEmail@gmail.com**.
+      - Añade un usuario. Ejemplo: *tuEmail@gmail.com*.
 
       - Pulsa el botón **Guardar y continuar**.
    
@@ -75,11 +75,52 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
    - Pulsa el botón Guardar y continuar.
 
 
-6. Una vez que tengas el usuario creado, descarga los **Secretos del cliente** en formato JSON dentro del repositorio, con el nombre "**credentials**".
+5. Una vez que tengas el usuario creado, descarga los **Secretos del cliente** en formato JSON dentro del repositorio, con el nombre "**credentials**".
 
 
-7. Por último, **introduce tu DNI** en la variable global "DNI" y **tu contraseña** en la variable global "PASSWORD", que verás al comienzo del ejecutable "sincronizador.sh".
+6. Por último, **introduce tu DNI** en la variable global "DNI" y **tu contraseña** en la variable global "PASSWORD", que verás al comienzo del ejecutable "sincronizador.sh".
 
+7. Añade los permisos de ejecución para el ejecutable:
+
+```
+chmod +x ./sincronizador.sh
+```
+
+8. Ejecuta el ejecutable:
+
+```
+./sincronizador.sh
+```
+
+## Creación de una tarea cron
+
+Puedes crear una tarea cron para que el ejecutable se ejecute periódicamente sin necesidad de estar ejecutando constantemente la aplicación. Para ello ejecuta:
+
+1. Crear o Editar el archivo Crontab
+
+```
+crontab -e
+```
+
+2. Elige el editor de textos que más te guste, en mi caso, elegiré **nano**.
+
+3. Queremos que se ejecute cada a las 10:30, cualquier día del mes, cualquier mes y los sábados.
+
+```
+30 10 * * 6 ruta/a/SincCal-UPV/sincronizador.sh
+```
+
+- Por ejemplo, si lo tienes dentro de la carpeta personal de usuario:
+
+```
+30 10 * * 6 ~/SincCal-UPV/sincronizador.sh
+```
+
+(Opcional) Si quieres eliminar la salida del programa, simplemente añade `> /dev/null 2>&1` al final del comando. Quedaría:
+
+```
+30 10 * * 6 ~/SincCal-UPV/sincronizador.sh > /dev/null 2>&1
+```
 
 ## Modificaciones
 Puedes modificar el nombre de las actividades y el color asociado a los eventos. En mi caso, me gusta usar los nombres para las actividades y un color Verde Musgo, que asocio al deporte. Puedes cambiar el color en la sección de Referencias.
@@ -94,4 +135,5 @@ Puedes modificar el nombre de las actividades y el color asociado a los eventos.
 3. [Código de Python](https://developers.google.com/calendar/api/quickstart/python?hl=es-419)
 
 4. [Vídeo usando la API de Google Calendar pero en el lenguaje de desarrollo Java](https://www.youtube.com/watch?v=zPsSUEGDfVY)
-https://developers.google.com/calendar/api/quickstart/python?hl=es-419
+
+5. [Cómo hacer una tarea cron](https://phoenixnap.com/kb/set-up-cron-job-linux)
