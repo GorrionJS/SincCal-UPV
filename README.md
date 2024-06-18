@@ -5,10 +5,11 @@
 - **SincCal-UPV** es una aplicación desarrollada en **Bash y Python** con el objetivo de sincronizar todas las actividades en las que un usuario de la UPV se inscriba, a su calendario personal de Google Calendar.
 
 
-![Imagen del logo de la aplicación](/images/logo_prototipo.png)
-![Imagen de la portada dónde se ven los logos](/images/portada.png)
-![Imagen dónde se pueden las actividades reservadas correctamente](/images/actividades_registradas.png)
-![Imagen dónde se pueden ver las actividades que se quieren registrar pero ya están añadidas](/images/activiades_existentes.png)
+
+<img src="/images/logo_prototipo.png" alt="Imagen del logo de la aplicación" width="100">
+<img src="/images/portada.png" alt="Imagen de la portada dónde se ven los logos" witdh="100">
+<img src="/images/actividades_registradas.png" alt="Imagen dónde se pueden las actividades reservadas correctamente" witdh="">
+<img src="/images/activiades_existentes.png" alt="Imagen dónde se pueden ver las actividades que se quieren registrar pero ya están añadidas" witdh="100">
 
 
 ## Antes de empezar
