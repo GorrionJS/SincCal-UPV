@@ -1,8 +1,8 @@
 # SincCal-UPV
 
-**¿Eres alumno de la UPV y te gusta realizar deporte? ¿Estás cansado de tener que añadir a mano todos los días que vas a hacer deporte?** Pues el SincCal-UPV es la solución para tus problemas.
+**¿Eres alumno de la UPV y te gusta realizar deporte? ¿Estás cansado de tener que añadir a mano todos los días que vas a hacer ejercicio?** Pues SincCal-UPV es la solución para tus problemas.
 
-- **SincCal-UPV** es una aplicación desarrollada en **Bash y Python** con el objetivo de sincronizar todas las actividades en las que un usuario de la UPV se inscriba, a su calendario personal de Google Calendar.
+- **SincCal-UPV** es una aplicación desarrollada en **Bash y Python** con el objetivo de sincronizar todas las actividades a las que un usuario de la UPV se inscriba, a su calendario personal de Google Calendar.
 
 
 
