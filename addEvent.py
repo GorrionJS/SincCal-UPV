@@ -13,6 +13,8 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
+from emojiActividad import emojiActividad
+
 # If modifying these SCOPES, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/calendar.events']
 
@@ -30,59 +32,6 @@ def check_duplicate_event(service, event_details):
         if start == event_details['start']['dateTime'] and end == event_details['end']['dateTime']:
             return True
     return False
-
-
-def emojiActividad():
-  if (sys.argv[1] == "󰿗 Musculación"): 
-    sys.argv[1] = "💪🏻 Musculación"
-  elif (sys.argv[1] == "󱗻 Bachata"):
-    sys.argv[1] = "💃🏻 Bachata"
-  elif (sys.argv[1] == "󱗻 Bailes Latinos"):
-    sys.argv[1] = "💃🏻 Bailes Latinos"
-  elif sys.argv[1] == "Acondicionamiento":
-      sys.argv[1] = "Acondicionamiento"
-  elif sys.argv[1] == "Aerobox":
-      sys.argv[1] = "Aerobox"
-  elif sys.argv[1] == " Bars Training":
-      sys.argv[1] = "🥖 Bars Training"
-  elif sys.argv[1] == "Body Weight Training":
-      sys.argv[1] = "Body Weight Training"
-  elif sys.argv[1] == "Commercial Dance":
-      sys.argv[1] = "💃🏻 Commercial Dance"
-  elif sys.argv[1] == "󰁬 Espalda Sana":
-      sys.argv[1] = "🧘🏻 Espalda Sana"
-  elif sys.argv[1] == "󰿗 Fitness":
-      sys.argv[1] = "🏃🏻 Fitness"
-  elif sys.argv[1] == "󰿗 GAP":
-      sys.argv[1] = "🏋🏻 GAP"
-  elif sys.argv[1] == "Hip Hop":
-      sys.argv[1] = "🪩 Hip Hop"
-  elif sys.argv[1] == "󰿗 Pilates Sport":
-      sys.argv[1] = "💦 Pilates Sport"
-  elif sys.argv[1] == "Sexy Style":
-      sys.argv[1] = "👯‍♀️ Sexy Style"
-  elif sys.argv[1] == "Step":
-      sys.argv[1] = "Step"
-  elif sys.argv[1] == "Tonificación":
-      sys.argv[1] = "💦 Tonificación"
-  elif sys.argv[1] == "Yoga":
-      sys.argv[1] = "🧘🏻 Yoga"
-  elif sys.argv[1] == "Zumba":
-      sys.argv[1] = "💦 Zumba"
-  # Solo clases libres
-  elif sys.argv[1] == "󰠬 Chikung Adaptado":
-    sys.argv[1] = "🤸🏻 Chikung Adaptado"
-  elif sys.argv[1] == "󰿗 Sala Cardio":
-    sys.argv[1] = "🏃🏻 Sala Cardio"
-  elif sys.argv[1] == "󱄟 Spinning":
-    sys.argv[1] = "🚴🏻 Spinning"
-  elif sys.argv[1] == "󰠬 Taichi":
-    sys.argv[1] = "🤸🏻 Taichi"
-  elif sys.argv[1] == "Yogafit":
-    sys.argv[1] = "🧘🏻 Yogafit"
-  else:
-    print("Nombre no reconocido")
-
 
 
 def main():
@@ -116,7 +65,7 @@ def main():
 
     # Configuración del evento
 
-    emojiActividad()
+    sys.argv[1] = emojiActividad(sys.argv[1])
 
     event = {
       'summary': sys.argv[1], # Título

@@ -10,9 +10,13 @@ purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 
+function borrado_ficheros() {
+	rm cookies.txt archivo_get.txt primeras_y_segundas_lineas.txt nombre_actividades.txt fichero_dias_horas.txt dias.txt horas_inicio.txt horas_finalizacion.txt 2>/dev/null
+}
+
 function ctrl_c() {
 	echo -e "\n\n${redColour}[!] Saliendo...${endColour}\n"
-	rm cookies.txt archivo_get.txt primeras_y_segundas_lineas.txt nombre_actividades.txt fichero_dias_horas.txt dias.txt horas_inicio.txt horas_finalizacion.txt
+	borrado_ficheros
 	tput cnorm && exit 1
 }
 
@@ -28,7 +32,8 @@ intranet_login_URL="https://intranet.upv.es/pls/soalu/est_aute.intraalucomp"
 
 #############################################################
 
-tput civis #Ocultar el cursor
+tput civis # Ocultar el cursor
+trap ctrl_c SIGINT # Asociar función a la interrupción "ctrl + c"
 
 # Banner
 toilet -f mono9 -F border GorrionJS
@@ -83,82 +88,8 @@ if [[ $linea =~ ^\.upv\.es ]]; then
 	do
 		nombre_actividad=$(awk "NR==$i" ./nombre_actividades.txt)
 
-		case $nombre_actividad in
-			BACHATA)
-				nombre_actividad="󱗻 Bachata"
-				;;
-			*MUSCULACI*)
-				nombre_actividad="󰿗 Musculación"
-				;;
-			BAILES)
-				nombre_actividad="󱗻 Bailes Latinos"
-				;;
-
-			# A partir de aquí están ordenados por orden alfabético
-			ACONDICIONAMIENTO)
-				nombre_actividad="Acondicionamiento"
-			;;
-			AEROBOX)
-				nombre_actividad="Aerobox"
-				;;
-			BARS)
-				nombre_actividad=" Bars Training"
-				;;
-			BODY)
-				nombre_actividad="Body Weight Training"
-				;;
-			CHIKUNG)
-				nombre_actividad="󰠬 Chikung Adaptado"
-				;;
-			COMMERCIAL)
-				nombre_actividad="Commercial Dance"
-				;;
-			ESPALDA)
-				nombre_actividad="󰁬 Espalda Sana"
-				;;
-			FITNESS)
-				nombre_actividad="󰿗 Fitness"
-				;;
-			GAP)
-				nombre_actividad="󰿗 GAP"
-				;;
-			HIP)
-				nombre_actividad="Hip Hop"
-				;;
-			PILATES)
-				nombre_actividad="󰿗 Pilates Sport"
-				;;
-			SALA)
-				nombre_actividad="󰿗 Sala Cardio"
-				;;
-			SEXY)
-				nombre_actividad="Sexy Style"
-				;;
-			SPINNING)
-				nombre_actividad="󱄟 Spinning"
-				;;
-			STEP)
-				nombre_actividad="Step"
-				;;
-			TAICHI)
-				nombre_actividad="󰠬 Taichi"
-				;;
-			*TONIFICACI*)
-				nombre_actividad="Tonificación"
-				;;
-			YOGA)
-				nombre_actividad="Yoga"
-				;;
-			YOGAFIT)
-				nombre_actividad="Yogafit"
-				;;
-			ZUMBA)
-				nombre_actividad="Zumba"
-				;;
-			*)
-				echo "Nombre no reconocido"
-				;;
-		esac
+		# Llamamos al archivo "emojiActividad.sh"
+		nombre_actividad=$(source emojiActividad.sh $nombre_actividad)
 
 		dia_actividad=$(awk "NR==$i" ./dias.txt)
 
@@ -190,7 +121,7 @@ if [[ $linea =~ ^\.upv\.es ]]; then
 
 	done
 
-	rm cookies.txt archivo_get.txt primeras_y_segundas_lineas.txt nombre_actividades.txt fichero_dias_horas.txt dias.txt horas_inicio.txt horas_finalizacion.txt
+	borrado_ficheros
 
 	sleep 2
 
@@ -201,5 +132,6 @@ if [[ $linea =~ ^\.upv\.es ]]; then
 else
 	echo -e "\n\n${redColour}[!] Error al iniciar sesión${endColour}\n"
 	echo -e "${redColour}[!] Saliendo...${endColour}\n"
+	borrado_ficheros
 	tput cnorm && exit 1
 fi
