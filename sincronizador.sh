@@ -24,7 +24,7 @@ function ctrl_c() {
 
 # Variables globales (credenciales) - MODIFICAR POR EL USUARIO
 DNI="12345678"
-PASSWORD="Tu-Contraseña"
+PASSWORD="Tu_contraseña"
 
 # Variables globales (enlaces)
 intranet_centro_deportes="https://intranet.upv.es/pls/soalu/sic_depact.HSemActividades?p_idioma=c&p_vista=intranet"
@@ -32,6 +32,7 @@ intranet_login_URL="https://intranet.upv.es/pls/soalu/est_aute.intraalucomp"
 
 #############################################################
 
+clear
 tput civis # Ocultar el cursor
 trap ctrl_c SIGINT # Asociar función a la interrupción "ctrl + c"
 

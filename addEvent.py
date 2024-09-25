@@ -78,6 +78,15 @@ def main():
         'timeZone': 'Europe/Madrid',
       },
       'colorId': '10',  # Color Verde Musgo
+      'reminders': {
+        'useDefault': False,  # No usar recordatorios por defecto
+        'overrides': [
+            {
+                'method': 'popup',  # Tipo de recordatorio (puede ser "email" o "popup")
+                'minutes': 120  # 2 horas antes del evento
+            }
+        ]
+    }
     }
 
     # Verifica si el evento ya existe antes de añadirlo
