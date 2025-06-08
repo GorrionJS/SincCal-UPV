@@ -112,7 +112,9 @@ if [[ $linea =~ ^\.upv\.es ]]; then
 		if [[ $num -eq 0 ]]; then
 			echo -e "\t${redColour}[!]${endColour}${grayColour} El evento ${endColour}${redColour}ya existe en el calendario,${endColour}${grayColour} se va a proceder con la siguiente actividad.${endColour}"
 		elif [[ $num -eq 2 ]]; then
-			echo -e "\t${redColour}[✖]${endColour}${redColour} Las credenciales han expirado, vuelve a descargarlas...)${endColour}"
+			echo -e "\t${redColour}[✖]${endColour}${redColour} Las credenciales han expirado, vuelve a descargarlas...${endColour}\n"
+			borrado_ficheros
+			tput cnorm && exit 1
 			exit 1
 		else
 			echo -e "\t${greenColour}[+]${endColour}${grayColour} Se ha registrado ${greenColour}correctamente${endColour}${grayColour} el evento.${endColour}"
