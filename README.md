@@ -100,6 +100,17 @@ chmod +x ./sincronizador.sh
 ./sincronizador.sh
 ```
 
+## Renovación de credenciales
+> [!WARNING]
+> Las credenciales deberán renovarse cada dos semanas, aproximadamente.
+
+Para renovar las credenciales, borra el fichero _token.json_ y vuelve a lanzar el ejecutable:
+
+```
+rm -f token.json
+./sincronizador.sh
+```
+
 ## Creación de una tarea cron
 > [!NOTE]
 > Puedes crear una tarea cron para que el ejecutable se ejecute periódicamente sin necesidad de estar ejecutando constantemente la aplicación. 
