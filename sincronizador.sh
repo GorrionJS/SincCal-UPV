@@ -22,13 +22,16 @@ function ctrl_c() {
 
 #############################################################
 
-# Variables globales (credenciales) - MODIFICAR POR EL USUARIO
-DNI="12345678"
-PASSWORD="Tu_contraseña"
+# Variables globales (credenciales)
+IFS=":" read -r DNI PASSWORD <<< "$(head -n 1 credenciales.txt)"
 
 # Variables globales (enlaces)
 intranet_centro_deportes="https://intranet.upv.es/pls/soalu/sic_depact.HSemActividades?p_idioma=c&p_vista=intranet"
 intranet_login_URL="https://intranet.upv.es/pls/soalu/est_aute.intraalucomp"
+
+# Variables para la zona horario
+OFFSET=$(date +%z)
+OFFSET_ISO="${OFFSET:0:3}:${OFFSET:3:2}"
 
 #############################################################
 
@@ -105,7 +108,7 @@ if [[ $linea =~ ^\.upv\.es ]]; then
 
 		# Por cada una de estas iteraciones, vamos a crear un evento
 		dia_actividad=$(source diaAFecha.sh $dia_actividad)
-		python3 addEvent.py "$nombre_actividad" "${dia_actividad}T${hora_inicio}:00+02:00" "${dia_actividad}T${hora_finalizacion}:00+02:00"
+		python3 addEvent.py "$nombre_actividad" "${dia_actividad}T${hora_inicio}:00${OFFSET_ISO}" "${dia_actividad}T${hora_finalizacion}:00${OFFSET_ISO}"
 
 		num=$?
 
