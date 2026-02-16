@@ -12,7 +12,7 @@
 <img src="/images/activiades_existentes.png" alt="Imagen dónde se pueden ver las actividades que se quieren registrar pero ya están añadidas" witdh="100">
 
 
-## Antes de empezar
+## Antes de empezar - Dependencias
 
 - Instala las siguientes dependencias:
 
@@ -26,7 +26,7 @@ sudo apt install toilet
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 
-## Antes de empezar
+## Antes de empezar - Requisitos
 1. [Crea un nuevo proyecto](https://console.developers.google.com/projectcreate) en la consola de desarrolladores de Google
 
     - Pulsa sobre el botón **Crear**.
@@ -86,7 +86,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 5. Una vez que tengas el usuario creado, descarga los **Secretos del cliente** en formato JSON dentro del repositorio, con el nombre "**credentials**".
 
 
-6. Por último, **introduce tu DNI** en la variable global "DNI" y **tu contraseña** en la variable global "PASSWORD", que verás al comienzo del ejecutable "sincronizador.sh".
+6. Por último, **introduce tu DNI** y **tu contraseña** en el fichero *credenciales.txt*.
 
 7. Añade los permisos de ejecución para el ejecutable:
 
