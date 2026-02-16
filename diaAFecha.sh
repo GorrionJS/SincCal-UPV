@@ -43,7 +43,7 @@ function comparar_dias() {
 
 # Obtenemos el nombre del día en el que estamos.
 function es_para_hoy() {
-    date -d "today" "+%Y-%m-%d"
+    LC_TIME=es_ES.UTF-8 date -d "today" "+%Y-%m-%d"
 }
 
 es_entre_semana() {
@@ -150,7 +150,7 @@ es_fin_de_semana() {
 }
 
 comprobar_si_es_semana() {
-    diaActual=$(date -d "today" "+%A")
+    diaActual=$(LC_TIME=es_ES.UTF-8 date -d "today" "+%A")
 
     #if [[ "$diaActual" != "sábado" && "$diaActual" != "domingo" ]]; then
     if [[ "$diaActual" != "sábado" && "$diaActual" != "domingo" ]]; then
