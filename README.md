@@ -22,7 +22,12 @@ sudo apt install curl
 sudo apt-get install python3-pip
 sudo apt install toilet
 ```
+
+Es recomendable crear un entorno virtual para instalar las dependencias de Python:
+
 ```
+python3 -m venv .venv
+source .venv/bin/activate
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 
