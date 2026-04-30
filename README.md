@@ -17,10 +17,13 @@
 - Instala las siguientes dependencias:
 
 ```
+# Ubuntu
 sudo apt-get update
-sudo apt install curl
-sudo apt-get install python3-pip
-sudo apt install toilet
+sudo apt install curl python3-pip toilet
+
+# Fedora
+sudo dnf check-update
+sudo dnf install curl python3-pip toilet
 ```
 
 Es recomendable crear un entorno virtual para instalar las dependencias de Python:
