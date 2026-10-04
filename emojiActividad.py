@@ -35,7 +35,7 @@ def emojiActividad(actividad):
         return "🥋 Judo"
     elif actividad == "Karate":
         return "🥋 Karate"
-    elif actividad == "Musculación":
+    elif actividad == "Musculacion" or actividad =="Musculación":
         return "🏋️‍♂️ Musculacion"
     elif actividad == "Padel":
         return "🎾 Pádel"
@@ -64,4 +64,5 @@ def emojiActividad(actividad):
     elif actividad == "Zumba":
         return "💦 Zumba"
     else:
-        print("Nombre no reconocido")
+        print("Nombre no reconocido, se ha intentado agregar la actividad: ")
+        print(actividad)

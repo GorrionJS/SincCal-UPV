@@ -57,7 +57,7 @@ case $nombre_actividad in
 			KARATE)
 				echo "Karate"
 				;;
-			MUSCULACI*N)
+			MUSCU*)
 				echo "Musculacion"
 				;;
 			PELOTA)
@@ -100,7 +100,8 @@ case $nombre_actividad in
 				echo "Zumba"
 				;;
 			*)
-				echo "Nombre no reconocido"
+				echo -e "Nombre no reconocido, se ha intentando registrar la actividad: $nombre_actividad"
+				echo $nombre_actividad 
 				;;
 esac
 
