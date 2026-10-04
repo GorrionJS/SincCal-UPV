@@ -91,7 +91,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
    - Pulsa el botón Guardar y continuar.
 
 
-5. Una vez que tengas el usuario creado, descarga los **Secretos del cliente** en formato JSON dentro del repositorio, con el nombre "**credentials**".
+5. Una vez que tengas el usuario creado, descarga los **Secretos del cliente** en formato JSON dentro del repositorio, con el nombre "**credentials.json**".
 
 
 6. Por último, **introduce tu DNI** y **tu contraseña** en el fichero *credenciales.txt*.
