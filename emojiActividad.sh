@@ -101,7 +101,6 @@ case $nombre_actividad in
 				;;
 			*)
 				echo -e "Nombre no reconocido, se ha intentando registrar la actividad: $nombre_actividad"
-				echo $nombre_actividad 
 				;;
 esac
 
